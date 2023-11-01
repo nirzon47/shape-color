@@ -24,7 +24,6 @@ fetch('/assets/colors.json')
 		console.error('There was a problem with the fetch operation:', error)
 	})
 
-const length = 140
 const shapesList = ['circle', 'square', 'triangle', 'rectangle', 'diamond']
 const themeList = [
 	'light',
@@ -68,7 +67,7 @@ const container = document.getElementById('container')
  * @return {string} The randomly selected color.
  */
 const getRandomColor = () => {
-	return colors[Math.floor(Math.random() * length)].name
+	return colors[Math.floor(Math.random() * colors.length)].name
 }
 
 /**
