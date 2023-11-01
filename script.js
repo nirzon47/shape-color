@@ -10,7 +10,7 @@ let colors
  * @param {none} none - This function does not take any parameters.
  * @return {none} This function does not return anything.
  */
-fetch('/assets/colors.json')
+fetch('assets/colors.json')
 	.then((response) => {
 		if (!response.ok) {
 			throw new Error('Network response was not ok')
