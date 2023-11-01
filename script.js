@@ -79,6 +79,7 @@ const getRandomColor = () => {
  * @return {void}
  */
 const setContainerColor = () => {
+	// Sets a random color to the background
 	container.style.backgroundColor = getRandomColor()
 }
 
@@ -88,16 +89,22 @@ const setContainerColor = () => {
  * @return {undefined} - Does not return a value.
  */
 const getRandomShape = () => {
+	// Removes all the shapes before adding another
 	removeShapes()
-	let random = Math.floor(Math.random() * 50)
 
+	// Random chance
+	let random = Math.floor(Math.random() * 20)
+
+	// 1 in 20 chance to add lucky
 	if (random === 1) {
 		shape.classList.add('lucky')
 	} else {
+		// Adds a random class from the list
 		shape.classList.add(
 			shapesList[Math.floor(Math.random() * shapesList.length)]
 		)
 
+		// Removes background color if the class is triangle or lucky
 		if (shape.classList[0] === 'lucky' || shape.classList[0] === 'triangle') {
 			shape.style.backgroundColor = 'transparent'
 		}
@@ -111,6 +118,7 @@ const getRandomShape = () => {
  * @param {...string} shapesList - The CSS classes to remove from the shape element.
  */
 const removeShapes = () => {
+	// Removes all the classes
 	shape.classList.remove(...shapesList)
 	shape.classList.remove('lucky')
 }
@@ -122,13 +130,18 @@ const removeShapes = () => {
  * @return {none} This function does not return anything.
  */
 const setShapeColor = () => {
+	// Gets a random color
 	const tempColor = getRandomColor()
+
+	// If the shape is not a triangle or lucky, sets the background color
 	if (
 		!shape.classList.contains('triangle') &&
 		!shape.classList.contains('lucky')
 	) {
 		shape.style.backgroundColor = tempColor
 	}
+
+	// Sets the same color to the border
 	shape.style.borderColor = `${tempColor} transparent`
 }
 
