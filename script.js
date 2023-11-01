@@ -24,7 +24,9 @@ fetch('assets/colors.json')
 		console.error('There was a problem with the fetch operation:', error)
 	})
 
+// Shape List has the available shapes, they are classes to be added to an element
 const shapesList = ['circle', 'square', 'triangle', 'rectangle', 'diamond']
+// Theme List has the available themes in DaisyUI import
 const themeList = [
 	'light',
 	'dark',
@@ -57,6 +59,7 @@ const themeList = [
 	'winter',
 ]
 
+// DOM Elements
 const html = document.documentElement
 const shape = document.getElementById('shape')
 const container = document.getElementById('container')
