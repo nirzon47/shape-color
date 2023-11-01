@@ -22,6 +22,18 @@ In [the JavaScript file](script.js), JSDocs for every function is embedded, plea
 
 `Change webpage theme` button changes the theme of the entire webpage
 
+## Available Colors to cycle through
+
+All 140 HTML predefined colors
+
+## Available Shapes to cycle through
+
+- Square
+- Rectangle
+- Circle
+- Triangle
+- Diamond
+
 ## Building
 
 To install dependencies:
