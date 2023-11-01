@@ -1,8 +1,7 @@
 // colors.json sourced from https://gist.github.com/jennyknuth/e2d9ee930303d5a5fe8862c6e31819c5
-let colors
 
 /**
- * Fetches the colors from the '/assets/colors.json' endpoint and assigns them to the 'colors' variable.
+ * Fetches the colors from the source endpoint above and assigns them to the 'colors' variable.
  * If the response is not OK, throws an error.
  * Logs the fetched colors to the console.
  * Handles any errors that occur during the fetch operation.
@@ -10,7 +9,10 @@ let colors
  * @param {none} none - This function does not take any parameters.
  * @return {none} This function does not return anything.
  */
-fetch('assets/colors.json')
+let colors
+fetch(
+	'https://gist.githubusercontent.com/jennyknuth/e2d9ee930303d5a5fe8862c6e31819c5/raw/e4ec571a9b49ddc5c1789a4e7f3c67ec5271398e/colors.json'
+)
 	.then((response) => {
 		if (!response.ok) {
 			throw new Error('Network response was not ok')
@@ -56,8 +58,8 @@ const themeList = [
 	'coffee',
 	'winter',
 ]
-const html = document.documentElement
 
+const html = document.documentElement
 const shape = document.getElementById('shape')
 const container = document.getElementById('container')
 
