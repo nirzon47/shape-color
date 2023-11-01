@@ -1,14 +1,63 @@
 // colors.json sourced from https://gist.github.com/jennyknuth/e2d9ee930303d5a5fe8862c6e31819c5
-const colors = JSON.parse()
-const length = colors.length
+let colors
 
-const shapesList = [
-	'square circle',
-	'square square',
-	'triangle',
-	'square rectangle',
-	'square diamond',
+/**
+ * Fetches the colors from the '/assets/colors.json' endpoint and assigns them to the 'colors' variable.
+ * If the response is not OK, throws an error.
+ * Logs the fetched colors to the console.
+ * Handles any errors that occur during the fetch operation.
+ *
+ * @param {none} none - This function does not take any parameters.
+ * @return {none} This function does not return anything.
+ */
+fetch('/assets/colors.json')
+	.then((response) => {
+		if (!response.ok) {
+			throw new Error('Network response was not ok')
+		}
+		return response.json()
+	})
+	.then((data) => {
+		colors = data
+	})
+	.catch((error) => {
+		console.error('There was a problem with the fetch operation:', error)
+	})
+
+const length = 140
+const shapesList = ['circle', 'square', 'triangle', 'rectangle', 'diamond']
+const themeList = [
+	'light',
+	'dark',
+	'cupcake',
+	'bumblebee',
+	'emerald',
+	'corporate',
+	'synthwave',
+	'retro',
+	'cyberpunk',
+	'valentine',
+	'halloween',
+	'garden',
+	'forest',
+	'aqua',
+	'lofi',
+	'pastel',
+	'fantasy',
+	'wireframe',
+	'black',
+	'luxury',
+	'dracula',
+	'cmyk',
+	'autumn',
+	'business',
+	'acid',
+	'lemonade',
+	'night',
+	'coffee',
+	'winter',
 ]
+const html = document.documentElement
 
 const shape = document.getElementById('shape')
 const container = document.getElementById('container')
@@ -19,7 +68,7 @@ const container = document.getElementById('container')
  * @return {string} The randomly selected color.
  */
 const getRandomColor = () => {
-	return colors[Math.floor(Math.random() * length)]
+	return colors[Math.floor(Math.random() * length)].name
 }
 
 /**
@@ -27,8 +76,8 @@ const getRandomColor = () => {
  *
  * @return {void}
  */
-const setColor = () => {
-	shape.style.backgroundColor = getRandomColor()
+const setContainerColor = () => {
+	container.style.backgroundColor = getRandomColor()
 }
 
 /**
@@ -50,4 +99,26 @@ const getRandomShape = () => {
  */
 const removeShapes = () => {
 	shape.classList.remove(...shapesList)
+}
+
+/**
+ * Sets the background color of the shape to a random color.
+ *
+ * @param {none} none - This function does not take any parameters.
+ * @return {none} This function does not return anything.
+ */
+const setShapeColor = () => {
+	shape.style.backgroundColor = getRandomColor()
+}
+
+/**
+ * Changes the theme of the HTML page to a random theme from the theme list.
+ *
+ * @return {undefined} The function does not return a value.
+ */
+const changeTheme = () => {
+	html.setAttribute(
+		'data-theme',
+		themeList[Math.floor(Math.random() * themeList.length)]
+	)
 }

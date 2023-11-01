@@ -6,6 +6,9 @@
 
 .circle {
 	border-radius: 50%;
+	height: 4rem;
+	width: 4rem;
+	background-color: white;
 }
 
 .triangle {
@@ -19,8 +22,13 @@
 
 .diamond {
 	rotate: 45deg;
+	height: 4rem;
+	width: 4rem;
+	background-color: white;
 }
 
 .rectangle {
 	width: 5rem;
+	height: 4rem;
+	background-color: white;
 }
