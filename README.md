@@ -2,6 +2,8 @@
 
 ## [Hosted Link](https://nirzon47-shape-color.vercel.app/)
 
+## 1 in 20 chance to get a lucky shape!
+
 ## Tools Used
 
 - Bun as package manager
