@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Shape, color randomizer</title>
+
+		<link rel="stylesheet" href="styles/shapes.css" />
+		<link rel="stylesheet" href="styles/output.css" />
+
+		<script src="script.js"></script>
+	</head>
+	<body class="grid h-screen w-screen place-content-center items-center">
+		<!-- Outer container -->
+		<div
+			id="container"
+			class="w-40 h-40 rounded-full bg-zinc-600 grid place-content-center mb-8"
+		>
+			<!-- Inner shape -->
+			<div id="shape" class="square"></div>
+		</div>
+
+		<!-- Button Group -->
+		<div>
+			<button class="btn btn-primary" onclick="setColor()">Change color</button>
+			<button class="btn btn-primary">Change shape</button>
+		</div>
+	</body>
+</html>

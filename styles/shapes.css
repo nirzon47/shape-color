@@ -1,0 +1,26 @@
+.square {
+	height: 4rem;
+	width: 4rem;
+	background-color: white;
+}
+
+.circle {
+	border-radius: 50%;
+}
+
+.triangle {
+	width: 0;
+	height: 0;
+	background-color: transparent;
+	border-left: 2rem solid transparent;
+	border-right: 2rem solid transparent;
+	border-bottom: 2rem solid white;
+}
+
+.diamond {
+	rotate: 45deg;
+}
+
+.rectangle {
+	width: 5rem;
+}
