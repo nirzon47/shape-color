@@ -97,6 +97,10 @@ const getRandomShape = () => {
 		shape.classList.add(
 			shapesList[Math.floor(Math.random() * shapesList.length)]
 		)
+
+		if (shape.classList[0] === 'lucky' || shape.classList[0] === 'triangle') {
+			shape.style.backgroundColor = 'transparent'
+		}
 	}
 }
 
