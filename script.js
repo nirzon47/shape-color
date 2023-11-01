@@ -110,7 +110,11 @@ const removeShapes = () => {
  * @return {none} This function does not return anything.
  */
 const setShapeColor = () => {
-	shape.style.backgroundColor = getRandomColor()
+	const tempColor = getRandomColor()
+	if (!shape.classList.contains('triangle')) {
+		shape.style.backgroundColor = tempColor
+	}
+	shape.style.borderColor = `${tempColor} transparent`
 }
 
 /**
@@ -123,4 +127,32 @@ const changeTheme = () => {
 		'data-theme',
 		themeList[Math.floor(Math.random() * themeList.length)]
 	)
+}
+
+/**
+ * Calls the `delayLoop` function with the arguments `10`, `200`, and `setContainerColor`.
+ *
+ * @return {undefined} This function does not return a value.
+ */
+const changeColor100 = () => {
+	delayLoop(10, 200, setContainerColor)
+}
+
+/**
+ * Executes a callback function a specified number of times with a delay between each execution.
+ *
+ * @param {number} iterations - The number of times the callback function should be executed.
+ * @param {number} delay - The delay in milliseconds between each execution of the callback function.
+ * @param {function} callback - The callback function to be executed.
+ */
+function delayLoop(iterations, delay, callback) {
+	let i = 0
+	function next() {
+		if (i < iterations) {
+			callback(i)
+			i++
+			setTimeout(next, delay)
+		}
+	}
+	next()
 }

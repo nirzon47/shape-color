@@ -16,11 +16,11 @@
 		<!-- Script -->
 		<script src="script.js" defer></script>
 	</head>
-	<body class="grid h-screen w-screen place-content-center">
+	<body class="grid w-screen h-screen place-content-center">
 		<!-- Outer container -->
 		<div
 			id="container"
-			class="w-40 h-40 rounded-full bg-zinc-600 grid place-content-center mb-8 m-auto"
+			class="grid w-40 h-40 m-auto mb-8 rounded-full bg-zinc-600 place-content-center"
 		>
 			<!-- Inner shape -->
 			<div id="shape" class="square"></div>
@@ -38,6 +38,9 @@
 				Change shape color
 			</button>
 			<button class="btn" onclick="changeTheme()">Change webpage theme</button>
+			<button class="btn btn-primary" onclick="changeColor100()">
+				Change color 10 times
+			</button>
 		</div>
 	</body>
 </html>
