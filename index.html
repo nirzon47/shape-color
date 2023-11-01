@@ -17,30 +17,48 @@
 		<script src="script.js" defer></script>
 	</head>
 	<body class="grid w-screen h-screen place-content-center">
+		<!-- Heading -->
+		<h1 class="mb-8 text-2xl font-bold text-center">
+			Random Shape, color switcher
+		</h1>
+
 		<!-- Outer container -->
 		<div
 			id="container"
-			class="grid w-40 h-40 m-auto mb-8 rounded-full bg-zinc-600 place-content-center"
+			class="grid w-40 h-40 m-auto mb-12 rounded-full bg-zinc-600 place-content-center"
 		>
 			<!-- Inner shape -->
 			<div id="shape" class="square"></div>
 		</div>
 
 		<!-- Button Group -->
-		<div class="flex flex-col gap-y-6">
-			<button class="btn btn-primary" onclick="setContainerColor()">
-				Change container color
-			</button>
-			<button class="btn btn-secondary" onclick="getRandomShape()">
-				Change shape
-			</button>
-			<button class="btn btn-accent" onclick="setShapeColor()">
-				Change shape color
-			</button>
-			<button class="btn" onclick="changeTheme()">Change webpage theme</button>
+		<div class="flex flex-col gap-6 mb-4">
+			<!-- Inner Button Group -->
+			<div class="flex flex-wrap justify-between gap-x-4">
+				<button class="btn btn-primary" onclick="setContainerColor()">
+					Change container color
+				</button>
+				<button class="btn btn-secondary" onclick="getRandomShape()">
+					Change shape
+				</button>
+			</div>
+
+			<!-- Inner Button Group -->
+			<div class="flex flex-wrap justify-between gap-x-4">
+				<button class="btn btn-accent" onclick="setShapeColor()">
+					Change shape color
+				</button>
+				<button class="btn btn-success" onclick="changeTheme()">
+					Change webpage theme
+				</button>
+			</div>
+
 			<button class="btn btn-primary" onclick="changeColor100()">
 				Change color 10 times
 			</button>
 		</div>
+
+		<!-- Footer -->
+		<footer class="text-center">1 in 20 chance to get a lucky shape!</footer>
 	</body>
 </html>

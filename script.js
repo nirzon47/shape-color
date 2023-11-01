@@ -89,8 +89,15 @@ const setContainerColor = () => {
  */
 const getRandomShape = () => {
 	removeShapes()
+	let random = Math.floor(Math.random() * 50)
 
-	shape.classList.add(shapesList[Math.floor(Math.random() * shapesList.length)])
+	if (random === 1) {
+		shape.classList.add('lucky')
+	} else {
+		shape.classList.add(
+			shapesList[Math.floor(Math.random() * shapesList.length)]
+		)
+	}
 }
 
 /**
@@ -101,6 +108,7 @@ const getRandomShape = () => {
  */
 const removeShapes = () => {
 	shape.classList.remove(...shapesList)
+	shape.classList.remove('lucky')
 }
 
 /**
@@ -111,7 +119,10 @@ const removeShapes = () => {
  */
 const setShapeColor = () => {
 	const tempColor = getRandomColor()
-	if (!shape.classList.contains('triangle')) {
+	if (
+		!shape.classList.contains('triangle') &&
+		!shape.classList.contains('lucky')
+	) {
 		shape.style.backgroundColor = tempColor
 	}
 	shape.style.borderColor = `${tempColor} transparent`

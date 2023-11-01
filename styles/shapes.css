@@ -32,3 +32,11 @@
 	height: 4rem;
 	background-color: white;
 }
+
+.lucky {
+	height: 4rem;
+	width: 4rem;
+	background-image: url('/assets/lucky.png');
+	background-size: contain;
+	background-color: transparent;
+}
