@@ -1,7 +1,7 @@
 // colors.json sourced from https://gist.github.com/jennyknuth/e2d9ee930303d5a5fe8862c6e31819c5
 
 /**
- * Fetches the colors from the source endpoint above and assigns them to the 'colors' variable.
+ * Fetches the colors from the 'assets/colors.json' source endpoint and assigns them to the 'colors' variable.
  * If the response is not OK, throws an error.
  * Logs the fetched colors to the console.
  * Handles any errors that occur during the fetch operation.
@@ -10,9 +10,7 @@
  * @return {none} This function does not return anything.
  */
 let colors
-fetch(
-	'https://gist.githubusercontent.com/jennyknuth/e2d9ee930303d5a5fe8862c6e31819c5/raw/e4ec571a9b49ddc5c1789a4e7f3c67ec5271398e/colors.json'
-)
+fetch('assets/colors.json')
 	.then((response) => {
 		if (!response.ok) {
 			throw new Error('Network response was not ok')
