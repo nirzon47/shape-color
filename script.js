@@ -58,7 +58,7 @@ const themeList = [
 	'coffee',
 	'winter',
 ]
-let currentColor
+let currentColor = 'white'
 
 // DOM Elements
 const html = document.documentElement
@@ -71,8 +71,7 @@ const container = document.getElementById('container')
  * @return {string} The randomly selected color.
  */
 const getRandomColor = () => {
-	currentColor = colors[Math.floor(Math.random() * colors.length)].name
-	return currentColor
+	return colors[Math.floor(Math.random() * colors.length)].name
 }
 
 /**
@@ -108,7 +107,10 @@ const getRandomShape = () => {
 		shape.style.backgroundColor = currentColor
 
 		// Removes background color if the class is triangle or lucky
-		if (shape.classList[0] === 'lucky' || shape.classList[0] === 'triangle') {
+		if (
+			shape.classList.contains('lucky') ||
+			shape.classList.contains('triangle')
+		) {
 			shape.style.backgroundColor = 'transparent'
 		}
 	}
